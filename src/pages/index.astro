@@ -1,0 +1,67 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Quote from "../components/Quote.astro";
+import Showcase from "../components/Showcase.astro";
+import InfoBox from "../components/InfoBox.astro";
+import Hero from "../components/Hero.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Partners from "../components/Partners.astro";
+
+const viewSet1 = [
+  "/img/anycubic_logo.webp",
+  "/img/CFLY.webp",
+  "/img/JJRIC.webp",
+  "/img/MOFT.webp",
+];
+
+const viewSet2 = [
+  "/img/Zeelot.webp",
+  "/img/OMRON.webp",
+  "/img/PITAKA.webp",
+  "/img/SwellPro.webp",
+];
+---
+<MainLayout title="DANIRAS">
+	<article class="">
+		<Hero/>
+		<Partners
+		viewImagesSet1={viewSet1}
+		viewImagesSet2={viewSet2} />
+
+		<Showcase 
+		picture="/img/anycubic.webp" 
+		alt="big picture" 
+		header="Collaboration with Anycubic Nordic" 
+		text="Dive into inspiring stories about our partnership with Anycubic Nordic. Discover how we have created innovative solutions together, delivering quality in 3D printing that makes a difference for both professional and private users in the Nordic market."/>
+
+		<InfoBox 
+		header="Partnership"
+		header2="Company"
+		header3="Smarter"
+		text="We have assessed more than 50 different companies over the years."
+		text2="New Delivery Routes Optimized for Cost and Sustainability Across the Nordics."
+		text3="Daniras and Abycubic Nordic streamline logistics by cutting inefficiencies by 50%."/>	
+
+		<div class=" text-[#291F1E] md:p-20">
+			<Quote 
+			header="I hope that all young people will have the opportunity to work for a company like Daniras...." 
+			subheader="Markus, Student with responsibilities in IT development " 
+			text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."
+			link="/aboutus"
+			variant="tertiary"
+			/>
+		</div>
+		<ContactForm/>
+	</article>
+</MainLayout>
+<style>
+	img{
+        border-radius: 8px;
+        box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+    }
+</style>
+<script src="../js/login.js"></script>
+
+
+
+
