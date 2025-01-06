@@ -1,0 +1,80 @@
+---
+import "../styles/style.css"
+const { variant = "primary", size = "medium" } = Astro.props;
+
+const buttonStyling = "text-button font-[DM_Sans] font-semibold";
+
+const variantClasses = {
+  primary:
+    "button-primary transition rounded-full w-full",
+
+  secondary:
+    "button-secondary transition rounded-full w-full",
+
+  tertiary:
+    "button-tertiary transition rounded-full w-full",
+
+  quniary:
+  "button-quniary transition rounded-full w-full",
+};
+
+const sizeClasses = {
+  large: "px-6 py-8 text-xl",
+  medium: "px-7 py-5 text-lg",
+  small: "px-6 py-4 text-md",
+};
+--- 
+
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}>
+  <slot />
+</button>
+
+
+
+<style>
+  button{
+    box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+  }
+
+  button:hover{
+    box-shadow: 0px 8px 40px var(--opacity40-dark-blue);
+  }
+  /*button surface*/
+.button-primary{
+    background-color: var(--dark-brown);
+}
+.button-primary:hover{
+  background-color: var(--blue);
+}
+
+.button-secondary{
+    background-color: var(--red);
+}
+.button-secondary:hover, .button-tertiary:hover {
+    background-color: var(--dark-brown);
+}
+
+.button-tertiary, .button-quniary{
+    background-color: var(--blue);
+}
+
+.button-quniary:hover{
+  background-color:var(--white);
+  color: var(--dark-brown);
+}
+
+
+
+/*button text*/
+.text-button{
+    color:var(--white);
+}
+
+</style>
+
+
+<!-- right arrow -->
+ <!-- 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> -->
